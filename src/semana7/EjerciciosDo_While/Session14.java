@@ -41,10 +41,13 @@ public class Session14 {
                     validaUsuario = true;
                 }
                 case 2 -> {
-                    do {
-                        System.out.println("Ingrese sueldo");
-                        sueldo = sc.nextDouble();
-                    } while (sueldo < 0);
+                    if (validaUsuario) {
+                        System.out.println("Ingrese el sueldo: ");
+                        sueldo=sc.nextDouble();
+                        validaSueldo = true;
+                    }else{
+                        System.out.println("Antes debe ingresar nombres");
+                    }
                 }
                 case 3 -> {
                     if (validaSueldo == true && validaUsuario == true) {
@@ -53,8 +56,8 @@ public class Session14 {
                         * RESUMEN DE BOLETAS DE PAGO              *
                         *******************************************
                         * Nombre del Empleado: %s
-                        * Apellidos del Empleado: 
-                        * Tipo: 
+                        * Apellidos del Empleado: %s
+                        * Tipo: Contratado
                         * Sa
                         *
                         *
@@ -65,7 +68,7 @@ public class Session14 {
                         *******************************************
                         *                                         *
                         *******************************************
-                        """, nombre);
+                        """, nombre, apellido);
                     } else {
                         System.out.println("Ingrese usuario y sueldo ");
                     }
