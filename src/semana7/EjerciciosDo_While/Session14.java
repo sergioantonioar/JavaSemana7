@@ -15,7 +15,7 @@ public class Session14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String nombre = "", apellido = "";
-        double sueldo = 0.0;
+        double sueldo=0, total=0;
         int opcion = 0;
         boolean validaUsuario = false, validaSueldo = false;
         String menu = """
@@ -44,6 +44,7 @@ public class Session14 {
                     if (validaUsuario) {
                         System.out.println("Ingrese el sueldo: ");
                         sueldo=sc.nextDouble();
+                        total=sueldo*12;
                         validaSueldo = true;
                     }else{
                         System.out.println("Antes debe ingresar nombres");
@@ -55,28 +56,31 @@ public class Session14 {
                         *******************************************
                         * RESUMEN DE BOLETAS DE PAGO              *
                         *******************************************
-                        * Nombre del Empleado: %s
-                        * Apellidos del Empleado: %s
-                        * Tipo: Contratado
-                        * Sa
-                        *
-                        *
-                        *
-                        *
-                        *
-                        *
+                        * Nombre del Empleado: %s                 
+                        * Apellidos del Empleado: %s              
+                        * Tipo: Contratado                        
+                        * Salario Ene: %s    Salario Feb: %s      
+                        * Salario Mar: %s    Salario Abr: %s      
+                        * Salario May: %s    Salario Jun: %s      
+                        * Salario Jul: %s    Salario Ago: %s      
+                        * Salario Set: %s    Salario Oct: %s      
+                        * Salario Nov: %s    Salario Dic: %s      
                         *******************************************
-                        *                                         *
+                        * Total: %s                               
                         *******************************************
-                        """, nombre, apellido);
+                        """, nombre, apellido, sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo,sueldo, total);
                     } else {
                         System.out.println("Ingrese usuario y sueldo ");
                     }
                 }
                 default -> {
+                    System.out.println("Valor fuera de rango");
                 }
             }
-        }while(true);
+        }while(opcion!=4);
+        if (opcion==4) {
+            System.out.println("Programa finalizado");
+        }
     }
 }
 
