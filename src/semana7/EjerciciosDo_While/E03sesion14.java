@@ -23,7 +23,6 @@ public class E03sesion14 {
         int i = 1;
         do {
             int j = 1;
-
             do {
                 if ((i + j) % 2 == 0) {
                     System.out.print("1");
@@ -32,11 +31,9 @@ public class E03sesion14 {
                 }
                 j++;
             } while (j <= i);
-
+            
             System.out.println();
             i++;
         } while (i <= n);
-        
-        
     }
 }
